@@ -1,0 +1,19 @@
+# Configuration for ${project.name}
+#
+# Version: ${project.version}
+
+plugin-prefix: '&6Spleef Flag &8>> '
+debug-enabled: false
+
+# Default regen time in seconds.
+default-delay: 10
+
+# Deny drops from blocks affected?
+# Note: Also denies exp.
+deny-drops: true
+
+# Prevent a player being obstructed by a regenerating block.
+# It won't regenerate when a player is in range.
+obstruct-prevention:
+  enabled: true
+  radius: 1
