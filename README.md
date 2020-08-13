@@ -16,7 +16,7 @@ The delay is not required, ex.: `/region [...] DIRT, STONE:5`
 
 **Features**
 
-- Includes an anti-obstruct mechanism (block won't regenerate when there's a player on the location -- configurable)
+- Includes an anti-obstruct mechanism (block won't regenerate when there's a player on the location)
 
 ```yaml
 obstruct-prevention:
