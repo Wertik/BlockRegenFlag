@@ -1,25 +1,23 @@
-package space.devport.wertik.spleefflagexpansion;
+package space.devport.wertik.blockregenflag;
 
 import com.sk89q.worldguard.protection.flags.Flag;
 import com.sk89q.worldguard.protection.flags.FlagContext;
-import com.sk89q.worldguard.protection.flags.InvalidFlagFormat;
 import com.sk89q.worldguard.protection.flags.RegionGroup;
 import org.jetbrains.annotations.Nullable;
 
-public class SpleefRegenFlag extends Flag<String> {
+public class BlockRegenFlag extends Flag<String> {
 
-    protected SpleefRegenFlag(String name) {
+    protected BlockRegenFlag(String name) {
         super(name);
     }
 
-    protected SpleefRegenFlag(String name, @Nullable RegionGroup defaultGroup) {
+    protected BlockRegenFlag(String name, @Nullable RegionGroup defaultGroup) {
         super(name, defaultGroup);
     }
 
     @Override
-    public String parseInput(FlagContext context) throws InvalidFlagFormat {
+    public String parseInput(FlagContext context) {
         String input = context.getUserInput().trim();
-        SpleefFlagPlugin.getInstance().getConsoleOutput().debug("Input: " + input.toUpperCase());
         return input.toUpperCase();
     }
 

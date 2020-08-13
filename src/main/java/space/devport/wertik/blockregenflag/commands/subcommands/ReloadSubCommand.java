@@ -1,4 +1,4 @@
-package space.devport.wertik.spleefflagexpansion.commands.subcommands;
+package space.devport.wertik.blockregenflag.commands.subcommands;
 
 import org.bukkit.command.CommandSender;
 import org.jetbrains.annotations.NotNull;
@@ -6,7 +6,7 @@ import space.devport.utils.commands.SubCommand;
 import space.devport.utils.commands.struct.ArgumentRange;
 import space.devport.utils.commands.struct.CommandResult;
 import space.devport.utils.commands.struct.Preconditions;
-import space.devport.wertik.spleefflagexpansion.SpleefFlagPlugin;
+import space.devport.wertik.blockregenflag.BlockRegenFlagPlugin;
 
 public class ReloadSubCommand extends SubCommand {
 
@@ -18,7 +18,7 @@ public class ReloadSubCommand extends SubCommand {
 
     @Override
     protected CommandResult perform(CommandSender sender, String label, String[] args) {
-        SpleefFlagPlugin.getInstance().reload(sender);
+        BlockRegenFlagPlugin.getInstance().reload(sender);
         return CommandResult.SUCCESS;
     }
 

@@ -2,7 +2,7 @@
 #
 # Version: ${project.version}
 
-plugin-prefix: '&6Spleef Flag &8>> '
+plugin-prefix: '&6Block Regen Flag &8>> '
 debug-enabled: false
 
 # Default regen time in seconds.

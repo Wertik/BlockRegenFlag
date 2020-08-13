@@ -1,9 +1,9 @@
-package space.devport.wertik.spleefflagexpansion.system;
+package space.devport.wertik.blockregenflag.system;
 
 import org.bukkit.block.Block;
 import space.devport.utils.utility.LocationUtil;
-import space.devport.wertik.spleefflagexpansion.SpleefFlagPlugin;
-import space.devport.wertik.spleefflagexpansion.system.struct.RegenerationTask;
+import space.devport.wertik.blockregenflag.BlockRegenFlagPlugin;
+import space.devport.wertik.blockregenflag.system.struct.RegenerationTask;
 
 import java.util.Collections;
 import java.util.HashSet;
@@ -11,12 +11,12 @@ import java.util.Set;
 
 public class RegenerationManager {
 
-    private final SpleefFlagPlugin plugin;
+    private final BlockRegenFlagPlugin plugin;
 
     private final Set<RegenerationTask> regenerationTasks = new HashSet<>();
 
     public RegenerationManager() {
-        this.plugin = SpleefFlagPlugin.getInstance();
+        this.plugin = BlockRegenFlagPlugin.getInstance();
     }
 
     public void startTask(Block block, int delay) {

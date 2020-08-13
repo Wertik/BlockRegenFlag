@@ -4,11 +4,11 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>groupId</groupId>
-    <artifactId>SpleefFlagExpansion</artifactId>
+    <groupId>space.devport.wertik.blockregenflag</groupId>
+    <artifactId>BlockRegenFlag</artifactId>
     <version>1.0.0</version>
 
-    <name>SpleefFlagExpansion</name>
+    <name>BlockRegenFlag</name>
 
     <build>
         <defaultGoal>clean install</defaultGoal>
@@ -96,7 +96,7 @@
         <dependency>
             <groupId>org.jetbrains</groupId>
             <artifactId>annotations</artifactId>
-            <version>17.0.0</version>
+            <version>18.0.0</version>
             <scope>compile</scope>
         </dependency>
         <dependency>

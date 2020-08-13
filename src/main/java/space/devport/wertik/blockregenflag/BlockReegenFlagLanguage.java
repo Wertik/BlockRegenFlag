@@ -1,8 +1,8 @@
-package space.devport.wertik.spleefflagexpansion;
+package space.devport.wertik.blockregenflag;
 
 import space.devport.utils.text.language.LanguageDefaults;
 
-public class SpleefFlagLanguage extends LanguageDefaults {
+public class BlockReegenFlagLanguage extends LanguageDefaults {
 
     @Override
     public void setDefaults() {

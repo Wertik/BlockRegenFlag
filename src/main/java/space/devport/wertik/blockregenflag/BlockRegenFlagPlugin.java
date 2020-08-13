@@ -1,4 +1,4 @@
-package space.devport.wertik.spleefflagexpansion;
+package space.devport.wertik.blockregenflag;
 
 import com.sk89q.worldguard.WorldGuard;
 import com.sk89q.worldguard.protection.flags.Flag;
@@ -7,19 +7,19 @@ import com.sk89q.worldguard.protection.flags.registry.FlagConflictException;
 import com.sk89q.worldguard.protection.flags.registry.FlagRegistry;
 import lombok.Getter;
 import space.devport.utils.DevportPlugin;
-import space.devport.wertik.spleefflagexpansion.commands.SpleefFlagCommand;
-import space.devport.wertik.spleefflagexpansion.commands.subcommands.ReloadSubCommand;
-import space.devport.wertik.spleefflagexpansion.commands.subcommands.ResetSubCommand;
-import space.devport.wertik.spleefflagexpansion.listeners.BlockListener;
-import space.devport.wertik.spleefflagexpansion.system.RegenerationManager;
+import space.devport.wertik.blockregenflag.commands.BlockRegenCommand;
+import space.devport.wertik.blockregenflag.commands.subcommands.ReloadSubCommand;
+import space.devport.wertik.blockregenflag.commands.subcommands.ResetSubCommand;
+import space.devport.wertik.blockregenflag.listeners.BlockListener;
+import space.devport.wertik.blockregenflag.system.RegenerationManager;
 
-public class SpleefFlagPlugin extends DevportPlugin {
+public class BlockRegenFlagPlugin extends DevportPlugin {
 
-    private static final String SPLEEF_FLAG_NAME = "spleef-regen";
-    public static SetFlag<String> SPLEEF_REGEN_FLAG;
+    private static final String REGEN_FLAG_NAME = "block-regen";
+    public static SetFlag<String> BLOCK_REGEN_FLAG;
 
     @Getter
-    private static SpleefFlagPlugin instance;
+    private static BlockRegenFlagPlugin instance;
 
     @Getter
     private RegenerationManager regenerationManager;
@@ -42,16 +42,16 @@ public class SpleefFlagPlugin extends DevportPlugin {
         FlagRegistry registry = WorldGuard.getInstance().getFlagRegistry();
 
         try {
-            SetFlag<String> flag = new SetFlag<>(SPLEEF_FLAG_NAME, new SpleefRegenFlag(null));
+            SetFlag<String> flag = new SetFlag<>(REGEN_FLAG_NAME, new BlockRegenFlag(null));
             registry.register(flag);
-            SPLEEF_REGEN_FLAG = flag;
+            BLOCK_REGEN_FLAG = flag;
         } catch (FlagConflictException e) {
-            Flag<?> existing = registry.get(SPLEEF_FLAG_NAME);
+            Flag<?> existing = registry.get(REGEN_FLAG_NAME);
 
-            if (SPLEEF_REGEN_FLAG.getClass().isInstance(existing)) {
-                SPLEEF_REGEN_FLAG = (SetFlag<String>) existing;
+            if (BLOCK_REGEN_FLAG.getClass().isInstance(existing)) {
+                BLOCK_REGEN_FLAG = (SetFlag<String>) existing;
             } else {
-                consoleOutput.err("Some other plugin registered the flag " + SPLEEF_FLAG_NAME + "... can't work. Disabling.");
+                consoleOutput.err("Some other plugin registered the flag " + REGEN_FLAG_NAME + "... can't work. Disabling.");
                 return false;
             }
         }
@@ -64,11 +64,11 @@ public class SpleefFlagPlugin extends DevportPlugin {
 
         regenerationManager = new RegenerationManager();
 
-        new SpleefFlagLanguage();
+        new BlockReegenFlagLanguage();
 
         new BlockListener(this);
 
-        addMainCommand(new SpleefFlagCommand()
+        addMainCommand(new BlockRegenCommand()
                 .addSubCommand(new ReloadSubCommand())
                 .addSubCommand(new ResetSubCommand()));
     }

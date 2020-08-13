@@ -1,13 +1,13 @@
-package space.devport.wertik.spleefflagexpansion.commands;
+package space.devport.wertik.blockregenflag.commands;
 
 import org.bukkit.command.CommandSender;
 import space.devport.utils.commands.MainCommand;
 import space.devport.utils.commands.struct.CommandResult;
 
-public class SpleefFlagCommand extends MainCommand {
+public class BlockRegenCommand extends MainCommand {
 
-    public SpleefFlagCommand() {
-        super("spleefflagexpansion");
+    public BlockRegenCommand() {
+        super("blockregenflag");
     }
 
     @Override

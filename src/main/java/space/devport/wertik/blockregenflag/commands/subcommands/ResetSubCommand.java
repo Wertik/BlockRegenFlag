@@ -1,4 +1,4 @@
-package space.devport.wertik.spleefflagexpansion.commands.subcommands;
+package space.devport.wertik.blockregenflag.commands.subcommands;
 
 import org.bukkit.Bukkit;
 import org.bukkit.World;
@@ -8,8 +8,8 @@ import space.devport.utils.commands.SubCommand;
 import space.devport.utils.commands.struct.ArgumentRange;
 import space.devport.utils.commands.struct.CommandResult;
 import space.devport.utils.commands.struct.Preconditions;
-import space.devport.wertik.spleefflagexpansion.SpleefFlagPlugin;
-import space.devport.wertik.spleefflagexpansion.system.struct.RegenerationTask;
+import space.devport.wertik.blockregenflag.BlockRegenFlagPlugin;
+import space.devport.wertik.blockregenflag.system.struct.RegenerationTask;
 
 import java.util.HashSet;
 
@@ -36,10 +36,10 @@ public class ResetSubCommand extends SubCommand {
         }
 
         int count = 0;
-        for (RegenerationTask task : new HashSet<>(SpleefFlagPlugin.getInstance().getRegenerationManager().getTasks())) {
+        for (RegenerationTask task : new HashSet<>(BlockRegenFlagPlugin.getInstance().getRegenerationManager().getTasks())) {
             if (world == null || task.getLocation().getWorld().getName().equalsIgnoreCase(world.getName())) {
                 task.regenerate();
-                SpleefFlagPlugin.getInstance().getRegenerationManager().removeTask(task);
+                BlockRegenFlagPlugin.getInstance().getRegenerationManager().removeTask(task);
                 count++;
             }
         }
