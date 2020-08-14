@@ -7,8 +7,7 @@ Simple WorldGuard flag that regenerates broken blocks after configured time.
 
 **Usage**
 
-Add flag `block-regen` with params to a region.
-Syntax: `<BLOCK_TYPE>:<regeneration-delay-in-seconds>, ...`
+Add flag `block-regen` to a region with syntax: `<BLOCK_TYPE>:<regeneration-delay-in-seconds>, ...`
 
 WorldGuard command example: `/region flag <region-name> block-regen DIRT:10, STONE:5`
 
