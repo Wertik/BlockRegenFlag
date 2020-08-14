@@ -1,8 +1,4 @@
 # BlockRegenFlag
-WorldGuard flag expansion, regenerates broken blocks after some time.
-
-**Description**
-
 Simple WorldGuard flag that regenerates broken blocks after configured time.
 
 **Usage**
